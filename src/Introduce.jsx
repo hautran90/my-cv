@@ -8,7 +8,7 @@ function Introduce() {
       <div className="header-row">
         <Avatar />
         <div>
-          <h1>Phuc Tran</h1>
+          <h1>Phuc Tran Huy</h1>
           <h2>Developer / Technical Lead</h2>
           <hr className="header-divider" />
           <h3>
