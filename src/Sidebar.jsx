@@ -48,8 +48,8 @@ function Sidebar() {
     <div className="sidebar">
       <h2>My Profile</h2>
       <ul className="sidebar-list">
-        <li className={activePath === "/" ? "active" : ""}>
-          <Link to="/">Introduce</Link>
+        <li className={activePath === "/my-cv/" ? "active" : ""}>
+          <Link to="/my-cv/">Introduce</Link>
         </li>
         <li className={activePath === "/experience" ? "active" : ""}>
           <Link to="/experience">Experience</Link>

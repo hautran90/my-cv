@@ -13,7 +13,7 @@ function App() {
         <Sidebar />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Introduce />} />
+            <Route path="/my-cv/" element={<Introduce />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/highlightProjects" element={<HighlightProjects />} />
             {/* <Route path="/services" element={<Services />}>
