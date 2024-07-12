@@ -173,6 +173,8 @@ button:focus-visible {
   border-color: #4d4d50;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  display: flex;
+  justify-content: center;
 }
 
 .custom-container p {
@@ -215,7 +217,7 @@ button:focus-visible {
 
 .education-style {
   font-size: 20px;
-  line-height: 0.5;
+  line-height: 1.0;
 }
 
 .email-link {
@@ -252,4 +254,117 @@ button:focus-visible {
   height: 0.5px;
   background-color: #2d2d2f;
   margin: 20px 0 20px 0px;
+}
+
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 20px;
+    left: 10px; 
+    cursor: pointer;
+    font-size: 30px;
+    width: 40px; 
+    height: 40px; 
+    line-height: 40px; 
+    text-align: center; 
+    border-radius: 5px;
+  }
+
+  .sidebar {
+    display: block; /* Đảm bảo sidebar luôn hiển thị nhưng sẽ bị dịch ra khỏi khung nhìn khi không có class 'show' */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background: #333;
+    color: #fff;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .content {
+    margin-left: 0; /* Đảm bảo nội dung không bị đẩy bởi sidebar ẩn */
+    padding-left: 50px;
+    transition: filter 0.3s ease-in-out;
+    filter: none;
+  }
+
+  .content.dimmed {
+    filter: blur(2px);
+  }
+
+  .introduce {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header-row {
+    display: flex;
+    align-items: center; /* Đảm bảo rằng các mục căn giữa theo chiều dọc */
+    flex-wrap: wrap; /* Đảm bảo rằng các mục sẽ xuống hàng khi không đủ không gian */
+  }
+  
+  .header-row > div {
+    flex: 1; /* Đảm bảo rằng phần văn bản sẽ chiếm không gian còn lại */
+  }
+  
+  .header-row h1 {
+    margin: 0 0 0 20px;
+    font-size: 18px;
+  }
+  
+  .introduce h2 {
+    margin: 0 0 0 20px;
+    font-size: 16px;
+  }
+  
+  .introduce h3 {
+    margin: 0 0 0 20px;
+    font-size: 16px;
+  }
+
+  .avatar {
+    max-width: 30%;
+    height: auto;
+    align-items: center;
+  }
+  .introduce h4{
+    font-size: 16px;
+  }
+
+  .underlined-text {
+    position: relative;
+    font-size: 20px;
+  }
+
+  .text-expertise {
+    font-size: 14px;
+  }
+
+  .custom-container {
+    flex-basis: calc(50% - 40px); /* Hai item trên mỗi hàng trên thiết bị di động */
+    max-width: calc(50% - 40px);
+  }
+
+  .education-major-style {
+    font-size: 18px;
+  }
+  
+  .education-style {
+    font-size: 16px;
+    line-height: 1.0;
+  }
 }

@@ -35,8 +35,9 @@
 
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function Sidebar() {
+function Sidebar(props) {
   const location = useLocation();
   const [activePath, setActivePath] = useState(location.pathname);
 
@@ -45,21 +46,30 @@ function Sidebar() {
   }, [location.pathname]);
 
   return (
-    <div className="sidebar">
-      <h2>My Profile</h2>
-      <ul className="sidebar-list">
-        <li className={activePath === "/my-cv/" ? "active" : ""}>
-          <Link to="/my-cv/">Introduce</Link>
-        </li>
-        <li className={activePath === "/experience" ? "active" : ""}>
-          <Link to="/experience">Experience</Link>
-        </li>
-        <li className={activePath === "/highlightProjects" ? "active" : ""}>
-          <Link to="/highlightProjects">Highlight Project</Link>
-        </li>
-      </ul>
-    </div>
+    <div className={`sidebar ${props.isVisible ? "show" : ""}`}>
+    <h2>My Profile</h2>
+    <ul className="sidebar-list">
+      <li className={activePath === "/my-cv/" ? "active" : ""}>
+        <Link to="/my-cv/" onClick={props.onHideSidebar}>Introduce</Link>
+      </li>
+      <li className={activePath === "/experience" ? "active" : ""}>
+        <Link to="/experience" onClick={props.onHideSidebar}>Experience</Link>
+      </li>
+      <li className={activePath === "/highlightProjects" ? "active" : ""}>
+        <Link to="/highlightProjects" onClick={props.onHideSidebar}>Highlight Project</Link>
+      </li>
+    </ul>
+  </div>
   );
+}
+
+Sidebar.propTypes = {
+  isVisible: PropTypes.bool.isRequired,
+  onHideSidebar: PropTypes.func.isRequired,
+};
+
+Sidebar.defaultProps = {
+  isVisible: false,
 }
 
 export default Sidebar;
