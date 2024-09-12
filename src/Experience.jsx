@@ -51,7 +51,7 @@ function Experience() {
 
   const bumbiiContains = [
     "Develop mobile applications using the Flutter Framework",
-    "Develop web applications using the Reactjs",
+    "Develop web applications using the Nextjs, Axios, Zustand",
     "Develop new applications as well as maintain Bumbii 's outsourced projects.",
 
   ];
