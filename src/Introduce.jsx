@@ -55,7 +55,7 @@ function Introduce() {
         <CustomContainer name="Third Party" />
         <CustomContainer name="Map" />
         <CustomContainer name="Dart" />
-        <CustomContainer name="Reactjs" />
+        <CustomContainer name="Nextjs" />
         <CustomContainer name="Redux" />
         <CustomContainer name="Git" />
         <CustomContainer name="Jira" />
